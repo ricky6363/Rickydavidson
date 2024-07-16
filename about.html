@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - My Portfolio</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #010102;
+            background-image: url('rickyr5.jpg'); /* Add your background image path here */
+            background-size: cover;
+            background-position: center;
+            color: #fff; /* Set text color to white */
+        }
+        header {
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff; /* Text color changed to white */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #da042a; /* Change to red on hover */
+        }
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .about {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #fff; /* Set heading color to white */
+        }
+        h3 {
+            color: #e80a0a;
+        }
+        strong {
+            color: #939292; /* Hexadecimal code */
+        }
+        .three-d-text {
+            font-size: 3em;
+            color: #fff;
+            text-align: center;
+            text-shadow: 
+                1px 1px 0px #0b090a,
+                2px 2px 0px #da042a,
+                3px 3px 0px #da042a,
+                4px 4px 0px #da042a,
+                5px 5px 0px #da042a,
+               
+                6px 6px 0px #000;
+        }
+        p, ul {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background: #da042a;
+            color: #fff; /* Text color changed to white */
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #c00427;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer p {
+            margin: 0;
+            text-align: center;
+        }
+        .achievement-container {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .achievement-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        .achievement-info {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 120%;
+            width: 200px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            color: #fff;
+            border-radius: 5px;
+            transition: left 0.3s ease;
+        }
+        .achievement-container:hover .achievement-img {
+            transform: translateX(-50%);
+        }
+        .achievement-container:hover .achievement-info {
+            display: block;
+            left: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="about">
+        <h2 class="three-d-text">About Me</h2>
+        <div style="display: flex; justify-content: space-between;">
+            <div>
+                <h3>Education</h3>
+                <ul>
+                    <li><strong>Loyola-ICAM College of Engineering and Technology (LICET)</strong> - 2025<br>
+                        Bachelors in Computer Science and Engineering </li>
+                    <li><strong>S.A Polytechnic College</strong> - 2022<br>
+                        Diploma in Computer Engineering: Computer Engineering - 92%</li>
+                    <li>Completed professional development in Component Based Technology</li>
+                    <li><strong>Ebenezer Marcus Matriculation Higher Secondary School</strong></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Technical Skills</h3>
+                <p><strong>Programming:</strong> Python, C, Java, MySQL</p>
+                <p><strong>Web Development:</strong> HTML5, CSS3, JavaScript, React.JS, Git, JSX, Django, MongoDB</p>
+                <p><strong>Platforms:</strong> Visual Studio Code, Android Studio, Figma</p>
+            </div>
+        </div>
+
+        <h3>Internship Experience</h3>
+        <ul>
+            <li><strong>NULLCLASS, Chennai</strong> (2023-07 to 2023-08)<br>
+                Front-end Web Developer Intern</li>
+            <li><strong>Pantech e Learning, Chennai</strong> (2023-06 to 2023-07)<br>
+                Machine Learning Intern</li>
+            <li><strong>Paisol Technology</strong> (2024-04 to 2024-05)<br>
+                Web Development Intern</li>
+            <li><strong>TechnoHacks EduTech Official</strong> (2024-06 to 2024-07)<br>
+                Web Development Intern</li>
+        </ul>
+    </section>
+    <section id="achievements" class="achievements">
+        <h2 class="three-d-text">Achievements</h2>
+        <div class="achievement-container">
+            <img src="vi.jpg" alt="Hackathon Achievement" class="achievement-img">
+            <div class="achievement-info">
+             <a href="https://www.linkedin.com/posts/ricky-davidson-619060246_vortex-sustainabledevelopment-innovation-activity-7177639952527056896-6hgs?utm_source=share&utm_medium=member_desktop"><h3>Hackathon Achievement</h3></a>  
+                <p>Our team VORTEX has made significant progress in the PALS Pitch an Idea Contest at innoWah'24, reaching the finals held at IIT Madras! Grateful for the opportunity to showcase our sustainable development innovation, supported by our dedicated team and mentors. </p>
+            </div>
+        </div>
+       </section>
+
+        <footer>
+            <p>&copy; 2024 Rickydavidson. All rights reserved.</p>
+        </footer>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+        ScrollReveal().reveal('.achievements', {
+            delay: 200,
+            distance: '50px',
+            duration: 1000,
+            easing: 'ease',
+            interval: 200 // Adjust interval as needed
+        })
+        ScrollReveal().reveal('.about', {
+            delay: 200,
+            distance: '50px',
+            duration: 1800,
+            easing: 'ease',
+            interval: 200 // Adjust interval as needed
+        });
+    </script>
+</body>
+</html>

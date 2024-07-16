@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <title>Rickydavidson</title>
+    <link rel="icon" href="logoo.jpg">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('rickyr6.jpg');
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #d3d3d3c9;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #da042a; /* Red color on hover */
+        }
+        
+        .hero {
+            background-image: url('ricky (3).jpg');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background: #da042a;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #c00427;
+        }
+        .thre-d-text {
+            font-size: 3em;
+            color: #fff;
+            text-align: center;
+            text-shadow: 
+                1px 1px 0px #000,
+                2px 2px 0px #000,
+                3px 3px 0px #000,
+                4px 4px 0px #000,
+                5px 5px 0px #000,
+                6px 6px 0px #000,
+                7px 7px 0px #000,
+                8px 8px 0px #000,
+                9px 9px 0px #f90606;
+        }
+        .three-d-text {
+            font-size: 3em;
+            color: #fff;
+            text-align: center;
+            text-shadow: 
+                1px 1px 0px #000,
+                2px 2px 0px #000,
+                3px 3px 0px #000,
+                4px 4px 0px #000,
+                5px 5px 0px #000,
+                6px 6px 0px #000,
+                7px 7px 0px #000,
+                8px 8px 0px #f4f2f2,
+                9px 9px 0px #faf8f8;
+        }
+        
+        section {
+            padding: 60px 20px;
+        }
+        .about, .portfolio, .contact {
+            text-align: center;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .project {
+            position: relative;
+            margin: 15px;
+            width: 300px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .project .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        h3 {
+            color: #e80a0a;
+        }
+        .project:hover .overlay {
+            opacity: 1;
+        }
+        .project-name {
+            font-size: 1.5rem;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        .modal-content {
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            text-align: left;
+        }
+        .modal-content h3 {
+            margin-top: 0;
+        }
+        .close-btn {
+            background: #da042a;
+            padding: 10px 15px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .close-btn:hover {
+            background: #c00427;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .contact form input,
+        .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #e43232;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+        }
+        .contact form textarea {
+            resize: none;
+            height: 100px;
+        }
+        .contact form button {
+            padding: 10px 20px;
+            background: #da042a;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .contact form button:hover {
+            background: #c00427;
+        }
+        .contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 0;
+        }
+        
+        .max-width {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .column {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .left {
+            max-width: 500px;
+        }
+        
+        .right {
+            max-width: 500px;
+        }
+        
+        .contact-container {
+            border: 1px solid #ff0909f4;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .contact-container {
+            border: 1px solid #131212;
+            border: 2px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #ea3e3e19; /* Change this to your desired color */
+        }
+        
+        
+        .icons .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .icons .row i {
+            font-size: 24px;
+            color: #c82a2a;
+            margin-right: 10px;
+        }
+        
+        .info .head {
+            font-weight: bold;
+        }
+        
+        .info .sub-title {
+            color: #dc1d1d;
+        }
+        
+        .links a {
+            margin-right: 10px;
+            font-size: 24px;
+            color: #555;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        form .btn {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f00;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        form .btn:hover {
+            background-color: #c00;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1 class="thre-d-text">Welcome to My Portfolio</h1>
+       <h2> <p class="thr-d-text" >Hi, I'm Rickydavidson, a <span style="color: red;">front-end Developer</span>.</p></h2>
+        <p class="thr-d-text"><a href="Ricky_resume.pdf" class="btn">Download Resume</a></p>
+        <br>
+        <br>
+        <div>
+            <p class="thr-d-text">|<a href="https://www.linkedin.com/in/ricky-davidson-619060246" target="_blank"><i class='bx bxl-linkedin'></i></a>|</p>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2 class="three-d-text" style="color: red;">My Projects</h2>
+        <div class="projects">
+            <div class="project" style="background-image: url('logo1.png');" onclick="openModal('project1')">
+                <div class="overlay">
+                    <div class="project-name">Project 1</div>
+                </div>
+            </div>
+            <div class="project" style="background-image: url('logo.png');" onclick="openModal('project2')">
+                <div class="overlay">
+                    <div class="project-name">Project 2</div>
+                </div>
+            </div>
+            <div class="project" style="background-image: url('tripblog.png');" onclick="openModal('project3')">
+                <div class="overlay">
+                    <div class="project-name">Project 3</div>
+                </div>
+            </div>
+        </div>
+        <div class="projects">
+            <div class="project" style="background-image: url('moneytracker.png');" onclick="openModal('project4')">
+                <div class="overlay">
+                    <div class="project-name">Project 4</div>
+                </div>
+            </div>
+            <div class="project" style="background-image: url('gr69.png');" onclick="openModal('project5')">
+                <div class="overlay">
+                    <div class="project-name">Project 5</div>
+                </div>
+            </div>
+            <div class="project" style="background-image: url('logoo.jpg');" onclick="openModal('project6')">
+                <div class="overlay">
+                    <div class="project-name">Project 6</div>
+                </div>
+            </div>
+        </div>
+        <div class="projects">
+            <div class="project" style="background-image: url('Clientprojrct.jpg');" onclick="openModal('project7')">
+                <div class="overlay">
+                    <div class="project-name">Project 7</div>
+                </div>
+            </div>
+            <div class="projects">
+                <div class="project" style="background-image: url('ipl.jpg');" onclick="openModal('project8')">
+                    <div class="overlay">
+                        <div class="project-name">Project 8</div>
+                    </div>
+                </div>
+                <div class="projects">
+                    <div class="project" style="background-image: url('portfolio.jpg');" onclick="openModal('project9')">
+                        <div class="overlay">
+                            <div class="project-name">Project 9</div>
+                        </div>
+                    </div>
+        </div>
+    
+        <!-- Modal for Project 1 -->
+        <div id="project1" class="modal">
+            <div class="modal-content">
+                <h3>RDS_Travelbooking</h3>
+                <p><strong>Languages Used:</strong> HTML, CSS, JavaScript</p>
+                <p><strong>Website Link:</strong> <a href="https://ricky6363.github.io/RDS_TravelBooking/" target="_blank" style="color: red;">Visit Site</a></p>
+                <p><strong>Project Name:</strong> RDS_Travelbooking</p>
+                <p><strong>Intern Company Name:</strong> Paisol Technology</p>
+                <a href="#" class="close-btn" onclick="closeModal('project1')">Back</a>
+            </div>
+        </div>
+    
+        <!-- Modal for Project 2 -->
+        <div id="project2" class="modal">
+            <div class="modal-content">
+                <h3>RDS_CarService</h3>
+                <p><strong>Languages Used:</strong> HTML, CSS, JavaScript</p>
+                <p><strong>Website Link:</strong> <a href="https://ricky6363.github.io/RDS_Car_Service/" target="_blank" style="color: red;">Visit Site</a></p>
+                <p><strong>Project Name:</strong> RDS_CarService</p>
+                <p><strong>Intern Company Name:</strong> Technohacks EduTech</p>
+                <a href="#" class="close-btn" onclick="closeModal('project2')">Back</a>
+            </div>
+        </div>
+    
+        <!-- Modal for Project 3 -->
+        <div id="project3" class="modal">
+            <div class="modal-content">
+                <h3>Trip blog</h3>
+                <p><strong>Languages Used:</strong> HTML, CSS, JavaScript, ejs, node.js</p>
+                <p><strong>Website Link:</strong> <a href="https://ricky6363.github.io/Personal-Travel-Blog/" target="_blank" style="color: red;">Visit Site</a></p>
+                <p><strong>Project Name:</strong> Trip Blog</p>
+                <p><strong>College project:</strong> IBM Cloud static web app</p>
+                <a href="#" class="close-btn" onclick="closeModal('project3')">Back</a>
+            </div>
+        </div>
+    
+        <!-- Modal for Project 4 -->
+        <div id="project4" class="modal">
+            <div class="modal-content">
+                <h3>Money Tracker</h3>
+                <p><strong>Languages Used:</strong> HTML, CSS, JavaScript, Express, node.js, MongoDB</p>
+                <p><strong>Website Link:</strong> <a href="https://github.com/ricky6363/RDS_Money_Tracker_WebApp.git" target="_blank" style="color: red;">Visit Site</a></p>
+                <p><strong>Project Name:</strong> Money Tracker</p>
+                <p><strong>College project:</strong> IBM Cloud static web app</p>
+                <a href="#" class="close-btn" onclick="closeModal('project4')">Back</a>
+            </div>
+        </div>
+    
+        <!-- Modal for Project 5 -->
+        <div id="project5" class="modal">
+            <div class="modal-content">
+                <h3>Hand gesture applied in door automation</h3>
+                <p><strong>Languages Used:</strong> Python</p>
+                <p><strong>Website Link:</strong> <a href="https://github.com/ricky6363/RDS_Money_Tracker_WebApp.git" target="_blank" style="color: red;">Visit Site</a></p>
+                <p><strong>Project Name:</strong> Hand gesture applied in door automation</p>
+                <p><strong>College project:</strong> Embedded system with IOT</p>
+                <a href="#" class="close-btn" onclick="closeModal('project5')">Back</a>
+            </div>
+        </div>
+    
+        <!-- Modal for Project 6 -->
+        <div id="project6" class="modal">
+            <div class="modal-content">
+                <h3>Portfolio</h3>
+                <p><strong>Software Used:</strong> HTML, CSS </p>
+                <p><strong>Website Link:</strong> <a href="https://www.figma.com/proto/azDgTsIOvkYeJgqkdMHiTn/RDS-Portfolio-(Community)?node-id=23-2&t=BCVmrwR1YZA99TM8-6&starting-point-node-id=23%3A2" target="_blank" style="color: red;">Visit Site</a></p>
+                <p><strong>Project Name:</strong> Web design of portfolio</p>
+                <p><strong>Intern Company Name:</strong> Encryptix</p>
+                <a href="#" class="close-btn" onclick="closeModal('project6')">Back</a>
+            </div>
+        </div>
+    
+        <!-- Modal for Project 7 -->
+        <div id="project7" class="modal">
+            <div class="modal-content">
+                <h3>Client project</h3>
+                <p><strong>Software Used:</strong> Figma</p>
+                <p><strong>Website Link:</strong> <a href="https://www.figma.com/community/file/1392857447499846576" target="_blank" style="color: red;">Visit Site</a></p>
+                <p><strong>Project Name:</strong> Web design of Tanjore degree coffee</p>
+                <p><strong>Intern Company Name:</strong> Shadowfox</p>
+                <a href="#" class="close-btn" onclick="closeModal('project7')">Back</a>
+            </div>
+        </div>
+         <!-- Modal for Project 8 -->
+         <div id="project8" class="modal">
+            <div class="modal-content">
+                <h3>IPL team</h3>
+                <p><strong>Software Used:</strong> Figma</p>
+                <p><strong>Website Link:</strong> <a href="https://www.figma.com/community/file/1391758289835000967" target="_blank" style="color: red;">Visit Site</a></p>
+                <p><strong>Project Name:</strong> Web design of IPL team</p>
+                <p><strong>Intern Company Name:</strong> Shadowfox</p>
+                <a href="#" class="close-btn" onclick="closeModal('project8')">Back</a>
+            </div>
+        </div>
+         <!-- Modal for Project 9 -->
+         <div id="project9" class="modal">
+            <div class="modal-content">
+                <h3>Portfolio</h3>
+                <p><strong>Software Used:</strong> Figma</p>
+                <p><strong>Website Link:</strong> <a href="https://www.figma.com/proto/azDgTsIOvkYeJgqkdMHiTn/RDS-Portfolio-(Community)?node-id=23-2&t=BCVmrwR1YZA99TM8-6&starting-point-node-id=23%3A2" target="_blank" style="color: red;">Visit Site</a></p>
+                <p><strong>Project Name:</strong> Web design of portfolio</p>
+                <p><strong>Intern Company Name:</strong> Shadowfox</p>
+                <a href="#" class="close-btn" onclick="closeModal('project9')">Back</a>
+            </div>
+        </div>
+    </section>
+    
+    
+   
+    
+
+    <section id="contact" class="contact">
+        <div class="max-width">
+            <h2 class="three-d-text" style="color: red;">Contact Me</h2>
+            <div class="contact-content">
+                <div class="column left">
+                    <div class="contact-container">
+                        <div class="text">Get in touch</div>
+                        
+                        <div class="icons">
+                            <div class="row">
+                                <i class="fas fa-user"></i>
+                                <div class="info">
+                                    <div class="head">Name</div>
+                                    <div class="sub-title">Rickydavidson</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="info">
+                                    <div class="head">Address</div>
+                                    <div class="sub-title">Chennai, TamilNadu, India</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <i class="fas fa-envelope"></i>
+                                <div class="info">
+                            <div class="head">Email</div>
+                            <div class="sub-title">rdsricky2003@gmail.com</div>
+                                </div>
+                            </div>
+                            <p class="thr-d-text"><a href="Ricky_resume.pdf" class="btn">Download Resume</a></p>
+                        </div>
+                        <div class="links">
+                            <a href="https://www.linkedin.com/in/ricky-davidson-619060246"><i class="fa fa-linkedin-square"></i></a>
+                            <a href="https://github.com/ricky6363"><i class="fa fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column right">
+                    <form>
+                        <input type="text" placeholder="Your Name" required><br>
+                        <input type="email" placeholder="Your Email" required><br>
+                        <textarea placeholder="Your Message" required></textarea><br>
+                        <button type="submit" class="btn">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <footer>
+        <p>&copy; 2024 Rickydavidson. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        function openModal(projectId) {
+            document.getElementById(projectId).style.display = 'flex';
+        }
+
+        function closeModal(projectId) {
+            document.getElementById(projectId).style.display = 'none';
+        }
+
+        const scrollRevealOptions = {
+            delay: 200,
+            distance: '50px',
+            duration: 1000,
+            easing: 'ease',
+            interval: 0,
+            opacity: 0,
+            origin: 'bottom',
+            reset: true,
+            scale: 1,
+            cleanup: true,
+            container: window.document.documentElement,
+        };
+        ScrollReveal().reveal('.project', {
+            delay: 200,
+            distance: '50px',
+            duration: 1000,
+            easing: 'ease',
+            interval: 200 
+        })
+        ScrollReveal().reveal('.three-d-text', {
+            delay: 200,
+            distance: '50px',
+            duration: 1000,
+            easing: 'ease',
+            interval: 200 
+        })
+        ScrollReveal().reveal('.thre-d-text', {
+            delay: 200,
+            distance: '50px',
+            duration: 1000,
+            easing: 'ease',
+            interval: 200 
+        })
+        ScrollReveal().reveal('.thr-d-text', {
+            delay: 200,
+            distance: '50px',
+            duration: 1000,
+            easing: 'ease',
+            interval: 200 
+        });
+    </script>
+</body>
+</html>
